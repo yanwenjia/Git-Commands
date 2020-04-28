@@ -1,12 +1,17 @@
-### Git应用的常用场景
-
-## 基本使用,只需要以下四步
+#### 基本使用,只需要以下四步
 ```
 git add .
 git commit -m <信息>
 git pull
 git push
 ```
+#### 分支操作
+- `git branch <new-branch>`  创建新分支
+- `git branch -d <branch>`  删除分支
+- `git push origin <local-branch>:<local-branch>`  将本地分支推送到远程
+- `git push origin --delete <branch>`  删除远程分支
+- `git push origin --delete <branch>`  删除远程分支
+
 
 
 
