@@ -46,6 +46,10 @@ git push
 - `git remote origin set-url` 更改远程地址
 #### 重命名
 - `git mv <old> <new>` 重命名
+#### .gitignore文件不起作用
+- `git rm -r --cached .` 清除本地库的缓存
+- `git add .` 将本地代码重新加入
+- `git commit -m “update .gitignore”` 重新提交
 #### 删除
 - `git rm <文件路径> -r` 删除文件 -r(递归删除)
 #### 合并commit
