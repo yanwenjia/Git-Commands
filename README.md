@@ -63,14 +63,16 @@ git push
     + `git reset --mixed HEAD~1` 将取消上一次commit，更改内容放在工作区
     + `git reset --soft HEAD~1` 将取消上一次commit，更改内容放在暂存区
     + `git reset --hard HEAD~1` 将取消上一次commit，不保留更改内容
+    + `git reset --mixed(默认的)`
 + 已经push到远程仓库
-    + 使用`git reset`
+    + 使用`git reset`--
         1. `git log` 找到commitID
-        2. `git reset --soft <commitID>` 恢复到指定commitID
-        3. `git push -f` 强制提交远程仓库，必须加-f参数
+        2. `git reset --soft <commitID>` 恢复到指定commitID，在此后面的提交将被删除
+        3. `git push -f` 提交远程仓库，如果提交失败加-f参数
     + 使用`git revert`
-        1. `git log` 找到commitID(这个commitID比较特殊，找到提交信息之后，commitID并不是当条信息对应的commitID，而是他的后一次提交的commitID)
-        2. `git revert -n <commitID>` 恢复到指定commitID
+        1. `git log` 找到commitID
+        2. `git revert -n <commitID>` 恢复到指定commitID-只恢复一条记录（-n是--no-commit如果不带这个参数会自动提交一条commit，根据需要看是否添加）
+        3. `git revert <X...Y> ` X...Y 代表一个左开右闭区间(X,Y],不包括X,包括Y. 其中Y为起点commit，X为终点commit的下一个commit
         3. `git push` 提交到远程仓库
 
 
